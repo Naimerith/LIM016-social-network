@@ -1,6 +1,7 @@
 export const templateHeader = `
 <header class="header">
-    <div class="containerLogo">
+<div class="containerLogo">
+    <div>
          Logo
     </div>
     <h1 class="header">
@@ -9,4 +10,5 @@ export const templateHeader = `
     <div class="cerrarSesion">
          Salir
     </div>
+<div>
  </header>`

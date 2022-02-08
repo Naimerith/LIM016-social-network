@@ -1,11 +1,13 @@
 
 export const templateFooter =
-    `<footer class="footer">
-        <div class="containerInicio">
+    `<footer>
+    <div class="containerInicio">
+        <div>
             Inicio
         </div>
         <input id="buscador" class="buscador" name="buscador" type="text" placeholder="Buscar"/>
         <div class="containerPerfil">
             Perfil
         </div>
+    </div>
     </footer>`

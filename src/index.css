@@ -9,7 +9,7 @@
     color: slateblue;
 }
 
-.header, .footer {
+.containerInicio, .containerLogo {
     display: flex;
     justify-content: space-between;
     align-items: center;

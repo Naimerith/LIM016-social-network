@@ -1,32 +1,31 @@
 import { createUser } from '../firebase/firebaseFunciones.js'
 
-const elementInput = () => {
-    const input = document.getElementById('app')
+export const register = () => {
+
     const sectionSignUp = document.createElement('section');
-    sectionSignUp.classList.add('sectionSignUp');
-    sectionSignUp.innerHTML = `
-    <h1 class="Registrate">
-        Registrate
-    </h1>
-    <input id="name" class="form" name="nombre" type="text" placeholder="Nombre Completo" required/><br>
-    <input id="email" class="form" name="email" type="email" placeholder="Correo electrónico" required/><br>
-    <input id="password" class="form" name="contraseña" type="password" placeholder="Contraseña" required/>
-    <h5 class="textPrivacidad">
-        Al hacer clic en registrarte, aceptas nuestras Condiciones, Política de datos y la política de cookies.
-    </h5>
-    <div class=btnRegistrate>
+    const divSignUp = document.createElement('div')
+    sectionSignUp.classList.add('sectionSignUp'); //la clase para la section 
+    divSignUp.classList.add('divSignUp') // clase para el nombre 
+    sectionSignUp.appendChild(divSignUp);
+    divSignUp.innerHTML = `
+        <h1>Registrate</h1>
+        <input id="name" class="form" name="nombre" type="text" placeholder="Nombre completo" required/>
+        <input id="email" class="form" name="email" type="email" placeholder="email" required/>
+        <input id="password" class="form" name="contraseña" type="password" placeholder="********** " required/>
+        <h5 class="textPrivacidad">Al hacer clic en registrarte, aceptas nuestras Condiciones, Política de datos y la política de cookies. </h5>
         <button type="submit" class="btn" id="btn">Registrate</button>
-    </div>`
-    input.appendChild(sectionSignUp);
-}
+        <span class="link"> Ya tienes una cuenta <a id="linkLogIn" href="#/">Ingresar</a></span>`
 
-elementInput();
+    const boton_SignUp = sectionSignUp.querySelector('#btn');
+    boton_SignUp.addEventListener('click', (e) => {
+        e.preventDefault()
+        window.location.hash = '#/';
+        //console.log("diste un click")
 
-const botonSignUp = () => { //este es el evento para el boton de registrate
-    const boton_SignUp = document.querySelector('#btn');
-    boton_SignUp.addEventListener('click', () => {
-        const emailSignUp = document.querySelector('#email').value;
-        const passwordSignUp = document.querySelector('#password').value;
+        const emailSignUp = sectionSignUp.querySelector('#email').value;
+        const passwordSignUp = sectionSignUp.querySelector('#password').value;
+
+        //console.log(nombreDelRegistro, apellidoDelRegistro, emailDelRegistro, contraseñaDelRegistro, fechaNacDelRegistro);
 
         createUser(emailSignUp, passwordSignUp)
             .then((userCredential) => {
@@ -38,7 +37,13 @@ const botonSignUp = () => { //este es el evento para el boton de registrate
                 console.log(errorCode);
                 console.log(errorMessage);
             });
-    });
-}
-botonSignUp();
 
+    });
+
+    const btnLogin = divSignUp.querySelector('#linkLogIn');
+    btnLogin.addEventListener('click', () => {
+        window.location.hash = '#/';
+    });
+
+    return sectionSignUp;
+};
