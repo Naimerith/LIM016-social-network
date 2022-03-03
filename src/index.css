@@ -1,69 +1,732 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&family=Redressed&display=swap');
+
 * {
     margin: 0%;
-    padding: 1%;
+    padding: 0%;
     box-sizing: border-box;
     /*para mover el modelo de caja*/
 }
 
-.Registrate {
-    color: slateblue;
+body {
+    height: 100%;
+    width: 100%;
+    background: #C8EBF2;
 }
 
-.containerInicio, .containerLogo {
+/***Estilos header y footer***/
+.logo {
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1rem;
+}
+
+.inicio, .perfil_footer, .perfil_search {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+}
+
+.perfil_footer, .perfil_search {
+    margin-right: 1rem;
+}
+
+.perfil, #photoURL {
+    width: 4rem;
+    height: 4rem;
+}
+
+
+.perfil, #photoURL, .photo_perfil, .photo_public {
+    border-radius: 50%;
+}
+
+.photo_public {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.cerrarSesion {
+    margin-right: 10px;
+    width: 1.5rem;
+    height: 1.5rem
+}
+
+.glowApp {
+    font-family: Festive;
+    font-size: 2.8rem;
+    color: #2A3F88;
+    margin-right: 1rem;
+}
+
+.footer, .header, .headerSimple {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #EAECEE;
+    background-color: #F2E2CE;
 }
 
+.headerSimple {
+    justify-content: space-evenly !important
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 3rem;
+}
+
+/****Estilos al Buscador****/
+.form_search {
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+.search, .form_search {
+    padding: 3%;
+    border-radius: 6px;
+    border: 0;
+}
+
+ul {
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+/****Estilos al login****/
+.title_version {
+    font-size: 1.875rem;
+    font-family: Redressed;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-top: 4rem;
+}
+
+.glowApp2 {
+    font-family: Festive;
+    font-size: 2.8rem;
+    color: #2A3F88;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.logo2 {
+    width: 3rem;
+    height: 3rem;
+}
+
+.login {
+    text-align: center;
+}
+
+.tittle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs2 {
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.typeEmail1, .typePass {
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.styleEmail1, .stylepass {
+    border-radius: 3rem;
+    border: 0;
+    margin: 0.313rem;
+    padding: 0.313rem;
+    width: 70%;
+}
+
+.styleEmail1 {
+    background-image: url(../src/img/email.png);
+}
+
+.stylepass {
+    background-image: url(../src/img/candado.png);
+}
+
+.styleEmail1, .stylepass {
+    background-position: 13rem;
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+}
+
+.btn2, .btn-publicar {
+    width: 40% !important;
+    padding: 2%;
+    margin-bottom: 2%;
+    border-radius: 15px;
+    color: white;
+    background-color: #D9AA71;
+    border: 1px solid #645e55;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-publicar {
+    background-color: white !important;
+    color: black !important;
+}
+
+.btn2:hover {
+    content: "";
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    transition: transform 0.5s ease;
+}
+
+.btn-publicar:hover {
+    content: "";
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    transition: transform 0.5s ease;
+    color: white;
+}
+
+
+.btn-google {
+    width: 1.975rem;
+    height: 1.8rem;
+}
+
+.btn-github {
+    width: 2.475rem;
+    height: 2.475rem;
+}
+
+.iconos_sesion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.everified {
+    font-size: 14px;
+    justify-content: center;
+    padding-bottom: 10px;
+    color: red;
+}
+
+.enter, .link {
+    font-weight: lighter;
+    padding-bottom: 15px;
+    color: #7b8586;
+}
+
+/****Estilos al Registro de Usuario****/
+.title_register, .title-profile {
+    font-family: Redressed;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.imagenFondo {
+    width: 100%;
+    height: 100%;
+}
+
+.typeText, .typeEmail, .typePassword {
+    border-radius: 6px;
+    border: 0;
+    margin: 5px;
+    padding: 5px;
+    width: 70%;
+}
+
+.typeEmail {
+    background-image: url(../src/img/email.png);
+}
+
+.typePassword {
+    background-image: url(../src/img/candado.png);
+}
+.typeEmail, .typePassword, .formularioIncorrecto, .formularioCorrecto {
+    background-position: 15rem;
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+}
+.signUp {
+    text-align: center;
+}
+.error-message, .error-message-input {
+    font-size: 14px;
+    font-weight: bold;
+    justify-content: center;
+    padding-bottom: 10px;
+    color: red;
+}
+.textPrivacidad, .link_login {
+    font-weight: lighter;
+    padding-bottom: 15px;
+    color: #7b8586;
+}
+.btn_register, .modal-btn {
+    width: 40% !important;
+    padding: 2%;
+    margin-bottom: 3%;
+    border-radius: 15px;
+    color: white;
+    background-color: #D9AA71;
+    border: 1px solid #645e55;
+}
+.btn_register:hover {
+    content: "";
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    transition: transform 0.5s ease;
+}
+
+/****Estilos a los input del registros ****/
+.formularioIncorrecto {
+    border: 4px solid #e62a2a;
+    background-image: url(../src/img/rechazado.png);
+}
+
+.formularioCorrecto {
+    border: 4px solid #1ed12d;
+    background-image: url(../src/img/correcto.png);
+}
+
+.formularioIncorrecto, .formularioCorrecto {
+    background-position: 12rem !important
+}
+
+.error-message-input {
+    display: none;
+}
+
+.activo {
+    display: block;
+}
+
+.inactivo {
+    display: none;
+}
+
+/****Estilos al modal de Registro de Usuario****/
+.modal-content {
+    background: #769597;
+    position: absolute;
+    top: 45%;
+    height: 30%;
+    width: 60%;
+    left: 20%;
+    border-radius: 10px;
+}
+
+.modal-btn {
+    position: absolute;
+    height: 20%;
+    left: 30%;
+    top: 70%;
+}
+
+#message {
+    text-align: center;
+    padding: 4%;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+/****Estilos al Perfil de Usuario****/
+.article-home {
+    display: column;
+    margin-bottom: 4rem;
+}
+
+.userProfile {
+    display: flex;
+    padding: 10px 0 0 10px;
+}
+
+.title-profile {
+    padding-top: 5px;
+    font-size: 18px;
+}
+
+.descriptionPerfil {
+    padding-left: 3rem;
+}
+
+.btn-editProfile {
+    font-family: 'Times New Roman', Times, serif;
+    width: 81%;
+    margin: 2% 10%;
+    border: none;
+    background: white;
+    height: 1.2rem;
+    border-radius: 10px;
+}
+
+.btn-editProfile:hover {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    color: white;
+    transition: transform 0.5s ease;
+}
+
+.nameRegister, .description, .interests, .form-description, .form-interests {
+    border: none;
+    margin-bottom: 2%;
+}
+
+.emailRegister {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    text-align: center;
+    color: gray;
+}
+
+.presentacion {
+    font-family: Redressed;
+    font-size: 18px;
+}
+
+.description {
+    font-family: 'Times New Roman', Times, serif;
+    color: #3d4242;
+}
+
+.form-description, .form-interests {
+    width: 70%;
+    height: 4rem;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.modal-editProfile {
+    background-color: #769597;
+    width: 90%;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/****Estilos al home****/
+.homePage{
+    margin-top: 1rem;
+}
 .homePage, .header_post, .iconos, .icons_iteration {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+    align-items: flex-start;
+    padding: 3px;
+}
+
+.header_post {
+    background-color:#D9AA71;
+    margin-top: 0px !important;
+    border-radius: 10px;
+}
+
+.userName, .nameRegister {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .insertarPublicacion {
     padding: 1rem;
-    background-color: #EAECEE;
+    background-color: #D9AA71;
     display: flex;
     flex-direction: column;
-    align-items: flex-end
+    align-items: flex-end;
+    border-radius: 20px;
+    width: 70%;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
 }
 
 .inputInsertarPublicacion {
     height: 6rem;
-    width: 13rem;
+    width:90%;
+    border-radius: 1rem;
     background-color: aliceblue;
     padding: 1rem;
 }
 
-.header_post .title_post, .insert_coment {
+.header_post .title_post {
+    width: 100%;
+}
+
+#openComment {
+    display: none;
+}
+
+.insert_coment {
     width: 80%;
+    height: 2rem;
+    border: none;
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.icono-coment {
+    width: 1.4rem;
+    margin-left: 8px;
+}
+
+.btn-comentar {
+    border: none;
+    font-size: 12px;
+    font-style: italic;
+    text-decoration: underline;
+    background-color: white;
+    color: rgb(85, 177, 219);
+}
+
+.comentarioAbierto {
+    display: inline;
+}
+
+.title {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.date_hour {
+    font-size: 12px;
+    color: rgb(141, 141, 158);
+    text-align: left;
 }
 
 .content_post {
-    height: 5rem;
+    height: 100%;
+    width: 100%;
+    text-align: justify;
 }
 
-.header_post, .container_post, .iconos {
-    border: 1px solid;
+.iconos {
+    background-color: #F2E2CE;
+    border-radius: 10px;
 }
+
+.container_post {
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: white;
+    margin: 5%;
+}
+
 
 .fotoPerfil {
     height: 6rem;
     width: 6rem;
-    margin-left: 2rem;
+    text-align: center;
 }
 
 .photo_perfil, .fotoPerfil {
-    background-color: black;
     border-radius: 50%;
 }
 
-.footer {
-    position: static;
-    bottom: 0;
+.deleteBtn {
+    width: 1.5rem;
+}
+
+
+.editBtn{
+    width: 1.5rem;
+}
+
+.paint {
+    width: 1.4rem;
+}
+
+.mark_like {
+    filter: grayscale(100%);
+    width: 1.4rem;
+}
+
+.publicacion {
+    resize: none;
+    outline: none;
+    border: 0;
+    overflow: hidden;
+    background-color: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;  
+    display: flex;  
+    height: 100%;
     width: 100%;
-    padding: 0.5rem 0;
+}
+
+.editar {
+    display: none;
+    align-self: flex-start;
+    margin: 0,8rem 0,6rem 0 10px;
+    width: 10%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #184e77;
+    cursor: pointer;
+
+  }
+
+  @media (min-width: 768px) {
+
+    .homePage {
+        width:45%; 
+        float:left;
+        flex-direction: column;
+        display:flex;
+        align-items: center;
+        margin-top: 3rem;
+    }
+    
+    .container_post {
+        height: max-content;
+        width:50%; 
+        float:right; 
+        margin: 2%;
+    }
+    
+    #photoURL{
+        height: max-content;
+        width: max-content;
+    }
+
+    #userName{
+        width: max-content;
+        margin-top: 1rem ;
+        font-size: 1.5rem;
+        align-items: center;
+        font-family: Redressed;
+
+    }
+    .insertarPublicacion {
+        padding: 3%;
+        width: 75%;
+        margin-top: 1rem ;
+    }
+
+    .fotoPerfil{
+        width: max-content;
+        padding: 3%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .search{
+        width: 95%;
+    }
+    .containerLogin{
+        width:55%; 
+        float:left;
+        flex-direction: column;
+        display:flex;
+        align-items: center;
+        margin-top: 3rem; 
+    }
+   
+    .login{
+        height: max-content;
+        width:40%; 
+        float:right; 
+        margin: 2%;
+        margin-top: 12rem;
+    }
+
+    .title_version {
+        font-size: 2rem;
+    }
+    .imagenFondo{
+        width:max-content; 
+        float:left;
+        align-items: center;
+        margin-top: 3rem; 
+    }
+    .title_register{
+        font-size: 2rem;
+    }
+    .signUp{
+        height: max-content;
+        width:35%; 
+        float:right; 
+        margin: 1%;
+        margin-top: 5rem;
+    }
+    .typeText, .typeEmail, .typePassword {
+        width: 65%;
+    }
+    .headerSimple{
+        justify-content: center !important;
+    }
+
+
+  }
+
+  @media (min-width: 1024px){
+    .containerLogin{
+        width:60%; 
+        float:left;
+        flex-direction: column;
+        display:flex;
+        align-items: center;
+        margin-top: 3rem; 
+    }
+    .login{
+        height: max-content;
+        width:35%; 
+        float:right; 
+        margin: 1%;
+        margin-top: 10rem;
+    }
+    .title_version {
+        font-size: 2.5rem;
+    }
+    .imagenFondo{
+        width:max-content; 
+        float:left;
+        align-items: center;
+        margin-top: 3rem; 
+    }
+    .title_register{
+        font-size: 3rem;
+    }
+    .signUp{
+        height: max-content;
+        width:35%; 
+        float:right; 
+        margin: 1%;
+        margin-top: 7rem;
+    }
+    .typeText, .typeEmail, .typePassword {
+        width: 65%;
+    }
+    .headerSimple{
+        justify-content: center !important;
+    }
+    .userProfile,.btn-editProfile, .modal-containerEdit{
+        width:40%; 
+        float:left;
+        flex-direction: column;
+        display:flex;
+        align-items: center;
+        margin-top: 3rem; 
+        height: max-content;
+    }
+    .title.profile{
+        width:60%; 
+        float:right;
+        flex-direction: column;
+    }
 }
